@@ -18,13 +18,13 @@ extension MainViewController {
 
 extension MainViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        viewModel.numberOfImages
+        presenter.numberOfImages
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: AvatarCell.self),
                                                             for: indexPath) as? AvatarCell else { fatalError() }
-        let image = viewModel.getImage(for: indexPath.item)
+        let image = presenter.getImage(for: indexPath.item)
         cell.configureCell(with: image)
         return cell
     }

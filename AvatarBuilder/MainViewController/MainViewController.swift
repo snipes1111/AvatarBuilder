@@ -22,11 +22,11 @@ final class MainViewController: UIViewController {
     
     lazy var avatarButton: UIButton = UIButton.createButton(with: "Create my Avatar!")
     
-    lazy var imageCollectionView: UICollectionView = {
+    lazy var imageCollectionView: HorizontalCollectionView = {
         HorizontalCollectionView(view: mainView, numberOfItems: 2)
     }()
     
-    var viewModel: ViewModelProtocol!
+    var presenter: PresenterOutputProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,11 +34,11 @@ final class MainViewController: UIViewController {
     }
     
     private func commonInit() {
-        viewModel = ViewModel()
+        presenter = Presenter(viewController: self)
         setupCollectionView()
         setupSubviews()
         createTapGesture()
-        avatarButton.addTarget(self, action: #selector(createAvatar), for: .touchUpInside)
+        avatarButton.addTarget(self, action: #selector(avatarButtonDidTapped), for: .touchUpInside)
     }
 }
 
@@ -52,20 +52,17 @@ private extension MainViewController {
         view.endEditing(true)
     }
     
-    @objc private func createAvatar() {
-        guard let age = ageTF.text, let height = heightTF.text, let weight = weightTF.text
-        else { return }
-        guard [age, height, weight].filter({ $0.isEmpty }).isEmpty
-        else {
-            showTextInvalidAlert()
-            return
-        }
-        print("Age: \(age), Height: \(height), Weight: \(weight)")
-        return
+    @objc private func avatarButtonDidTapped() {
+        let imageIdx = imageCollectionView.findCentralCellIndexPath()
+        presenter.createAvatar(imageIdx: imageIdx?.item, age: ageTF.text,
+                               height: heightTF.text, weight: weightTF.text)
+        dismissKeyboard()
     }
-    
-    private func showTextInvalidAlert() {
-        let alert = UIAlertController(title: "Empty fields", message: "Hey! You should fill all fields out before sending your data.", preferredStyle: .alert)
+}
+
+extension MainViewController: ViewInputProtocol {
+    func showAlert(with title: String, and message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
         present(alert, animated: true, completion: nil)
     }

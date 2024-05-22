@@ -24,6 +24,14 @@ final class HorizontalCollectionView: UICollectionView {
     }
 }
 
+extension HorizontalCollectionView {
+    func findCentralCellIndexPath() -> IndexPath? {
+            let visibleRect = CGRect(origin: contentOffset, size: bounds.size)
+            let visiblePoint = CGPoint(x: visibleRect.midX, y: visibleRect.midY)
+            return indexPathForItem(at: visiblePoint)
+    }
+}
+
 final class CompositionalLayoutBuilder {
     
     private let view: UIView

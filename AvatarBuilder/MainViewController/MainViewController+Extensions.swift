@@ -47,7 +47,7 @@ extension MainViewController {
         vStack.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.8).isActive = true
         // avatarButton constraints
         mainView.addSubview(avatarButton)
-        avatarButton.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 24).isActive = true
+        avatarButton.topAnchor.constraint(equalTo: vStack.bottomAnchor, constant: 48).isActive = true
         avatarButton.centerXAnchor.constraint(equalTo: mainView.centerXAnchor).isActive = true
         avatarButton.widthAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.7).isActive = true
         avatarButton.heightAnchor.constraint(equalTo: mainView.widthAnchor, multiplier: 0.1).isActive = true

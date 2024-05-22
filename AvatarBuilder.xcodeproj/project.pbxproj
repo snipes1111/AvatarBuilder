@@ -13,15 +13,16 @@
 		CE675BD02BFBC14E003B4410 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE675BCF2BFBC14E003B4410 /* Assets.xcassets */; };
 		CE675BD32BFBC14E003B4410 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE675BD12BFBC14E003B4410 /* LaunchScreen.storyboard */; };
 		CE675BDC2BFBCA42003B4410 /* HorizontalCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE675BDB2BFBCA42003B4410 /* HorizontalCollectionView.swift */; };
-		CE675BDE2BFCCBD2003B4410 /* AvatarImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE675BDD2BFCCBD2003B4410 /* AvatarImages.swift */; };
+		CE675BDE2BFCCBD2003B4410 /* AvatarImageFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */; };
 		CE9082252BFCE86C006233CA /* AvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082242BFCE86C006233CA /* AvatarCell.swift */; };
 		CE9082282BFCE99C006233CA /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082272BFCE99C006233CA /* UIView+Extensions.swift */; };
-		CE90822A2BFCF108006233CA /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082292BFCF108006233CA /* ViewModel.swift */; };
+		CE90822A2BFCF108006233CA /* Presenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082292BFCF108006233CA /* Presenter.swift */; };
 		CE90822C2BFCF45B006233CA /* MainViewController+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90822B2BFCF45B006233CA /* MainViewController+CollectionView.swift */; };
 		CE90822E2BFCF6E4006233CA /* MainViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90822D2BFCF6E4006233CA /* MainViewController+Extensions.swift */; };
 		CE9082302BFCFBBD006233CA /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE90822F2BFCFBBD006233CA /* UILabel+Extensions.swift */; };
 		CE9082322BFD073B006233CA /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082312BFD073B006233CA /* UITextField+Extensions.swift */; };
 		CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082352BFD1E53006233CA /* UIButton+Extension.swift */; };
+		CEA2BE872BFE0D640055D20E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BE862BFE0D640055D20E /* Avatar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,15 +34,16 @@
 		CE675BD22BFBC14E003B4410 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE675BD42BFBC14E003B4410 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE675BDB2BFBCA42003B4410 /* HorizontalCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizontalCollectionView.swift; sourceTree = "<group>"; };
-		CE675BDD2BFCCBD2003B4410 /* AvatarImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImages.swift; sourceTree = "<group>"; };
+		CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageFetcher.swift; sourceTree = "<group>"; };
 		CE9082242BFCE86C006233CA /* AvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarCell.swift; sourceTree = "<group>"; };
 		CE9082272BFCE99C006233CA /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
-		CE9082292BFCF108006233CA /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		CE9082292BFCF108006233CA /* Presenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presenter.swift; sourceTree = "<group>"; };
 		CE90822B2BFCF45B006233CA /* MainViewController+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+CollectionView.swift"; sourceTree = "<group>"; };
 		CE90822D2BFCF6E4006233CA /* MainViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MainViewController+Extensions.swift"; sourceTree = "<group>"; };
 		CE90822F2BFCFBBD006233CA /* UILabel+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 		CE9082312BFD073B006233CA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CE9082352BFD1E53006233CA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		CEA2BE862BFE0D640055D20E /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,13 +78,11 @@
 			children = (
 				CE675BDA2BFBC65D003B4410 /* Resources */,
 				CE9082262BFCE97D006233CA /* Extensions */,
-				CE675BCA2BFBC14A003B4410 /* MainViewController.swift */,
-				CE90822D2BFCF6E4006233CA /* MainViewController+Extensions.swift */,
-				CE90822B2BFCF45B006233CA /* MainViewController+CollectionView.swift */,
-				CE9082292BFCF108006233CA /* ViewModel.swift */,
+				CEA2BE882BFE0D740055D20E /* Model */,
+				CEA2BE852BFE069B0055D20E /* MainViewController */,
+				CE9082292BFCF108006233CA /* Presenter.swift */,
 				CE9082242BFCE86C006233CA /* AvatarCell.swift */,
 				CE675BDB2BFBCA42003B4410 /* HorizontalCollectionView.swift */,
-				CE675BDD2BFCCBD2003B4410 /* AvatarImages.swift */,
 			);
 			path = AvatarBuilder;
 			sourceTree = "<group>";
@@ -108,6 +108,25 @@
 				CE9082352BFD1E53006233CA /* UIButton+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		CEA2BE852BFE069B0055D20E /* MainViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CE675BCA2BFBC14A003B4410 /* MainViewController.swift */,
+				CE90822D2BFCF6E4006233CA /* MainViewController+Extensions.swift */,
+				CE90822B2BFCF45B006233CA /* MainViewController+CollectionView.swift */,
+			);
+			path = MainViewController;
+			sourceTree = "<group>";
+		};
+		CEA2BE882BFE0D740055D20E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BE862BFE0D640055D20E /* Avatar.swift */,
+				CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -181,7 +200,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9082282BFCE99C006233CA /* UIView+Extensions.swift in Sources */,
-				CE675BDE2BFCCBD2003B4410 /* AvatarImages.swift in Sources */,
+				CE675BDE2BFCCBD2003B4410 /* AvatarImageFetcher.swift in Sources */,
 				CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */,
 				CE9082302BFCFBBD006233CA /* UILabel+Extensions.swift in Sources */,
 				CE675BCB2BFBC14A003B4410 /* MainViewController.swift in Sources */,
@@ -190,8 +209,9 @@
 				CE675BDC2BFBCA42003B4410 /* HorizontalCollectionView.swift in Sources */,
 				CE9082252BFCE86C006233CA /* AvatarCell.swift in Sources */,
 				CE90822E2BFCF6E4006233CA /* MainViewController+Extensions.swift in Sources */,
+				CEA2BE872BFE0D640055D20E /* Avatar.swift in Sources */,
 				CE9082322BFD073B006233CA /* UITextField+Extensions.swift in Sources */,
-				CE90822A2BFCF108006233CA /* ViewModel.swift in Sources */,
+				CE90822A2BFCF108006233CA /* Presenter.swift in Sources */,
 				CE675BC92BFBC14A003B4410 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

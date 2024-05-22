@@ -23,7 +23,39 @@
 		CE9082322BFD073B006233CA /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082312BFD073B006233CA /* UITextField+Extensions.swift */; };
 		CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE9082352BFD1E53006233CA /* UIButton+Extension.swift */; };
 		CEA2BE872BFE0D640055D20E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BE862BFE0D640055D20E /* Avatar.swift */; };
+		CEA2BE932BFE21A30055D20E /* AvatarBuilderWatchApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BE922BFE21A30055D20E /* AvatarBuilderWatchApp.swift */; };
+		CEA2BE972BFE21A60055D20E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BE962BFE21A60055D20E /* Assets.xcassets */; };
+		CEA2BE9A2BFE21A60055D20E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEA2BE992BFE21A60055D20E /* Preview Assets.xcassets */; };
+		CEA2BE9D2BFE21A60055D20E /* AvatarBuilderWatch Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = CEA2BE902BFE21A30055D20E /* AvatarBuilderWatch Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CEA2BEA32BFE23280055D20E /* AvatarOverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEA22BFE23270055D20E /* AvatarOverviewView.swift */; };
+		CEA2BEA72BFE29DA0055D20E /* AvatarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEA62BFE29D90055D20E /* AvatarViewModel.swift */; };
+		CEA2BEA92BFE2CEF0055D20E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEA82BFE2CEF0055D20E /* Avatar.swift */; };
+		CEA2BEAC2BFE38B80055D20E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEAB2BFE38B80055D20E /* EditView.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CEA2BE9B2BFE21A60055D20E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CE675BBB2BFBC14A003B4410 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CEA2BE8F2BFE21A30055D20E;
+			remoteInfo = "AvatarBuilderWatch Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CEA2BEA12BFE21A60055D20E /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				CEA2BE9D2BFE21A60055D20E /* AvatarBuilderWatch Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		CE675BC32BFBC14A003B4410 /* AvatarBuilder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AvatarBuilder.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,10 +76,25 @@
 		CE9082312BFD073B006233CA /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		CE9082352BFD1E53006233CA /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
 		CEA2BE862BFE0D640055D20E /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		CEA2BE902BFE21A30055D20E /* AvatarBuilderWatch Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AvatarBuilderWatch Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEA2BE922BFE21A30055D20E /* AvatarBuilderWatchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarBuilderWatchApp.swift; sourceTree = "<group>"; };
+		CEA2BE962BFE21A60055D20E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		CEA2BE992BFE21A60055D20E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		CEA2BEA22BFE23270055D20E /* AvatarOverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarOverviewView.swift; sourceTree = "<group>"; };
+		CEA2BEA62BFE29D90055D20E /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
+		CEA2BEA82BFE2CEF0055D20E /* Avatar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Avatar.swift; sourceTree = "<group>"; };
+		CEA2BEAB2BFE38B80055D20E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		CE675BC02BFBC14A003B4410 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA2BE8D2BFE21A30055D20E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -61,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				CE675BC52BFBC14A003B4410 /* AvatarBuilder */,
+				CEA2BE912BFE21A30055D20E /* AvatarBuilderWatch Watch App */,
 				CE675BC42BFBC14A003B4410 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				CE675BC32BFBC14A003B4410 /* AvatarBuilder.app */,
+				CEA2BE902BFE21A30055D20E /* AvatarBuilderWatch Watch App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,12 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				CE675BDA2BFBC65D003B4410 /* Resources */,
-				CE9082262BFCE97D006233CA /* Extensions */,
-				CEA2BE882BFE0D740055D20E /* Model */,
-				CEA2BE852BFE069B0055D20E /* MainViewController */,
-				CE9082292BFCF108006233CA /* Presenter.swift */,
-				CE9082242BFCE86C006233CA /* AvatarCell.swift */,
-				CE675BDB2BFBCA42003B4410 /* HorizontalCollectionView.swift */,
+				CEA2BE8B2BFE1EAD0055D20E /* AvatarBuilderModule */,
 			);
 			path = AvatarBuilder;
 			sourceTree = "<group>";
@@ -116,6 +160,7 @@
 				CE675BCA2BFBC14A003B4410 /* MainViewController.swift */,
 				CE90822D2BFCF6E4006233CA /* MainViewController+Extensions.swift */,
 				CE90822B2BFCF45B006233CA /* MainViewController+CollectionView.swift */,
+				CE9082242BFCE86C006233CA /* AvatarCell.swift */,
 			);
 			path = MainViewController;
 			sourceTree = "<group>";
@@ -125,6 +170,48 @@
 			children = (
 				CEA2BE862BFE0D640055D20E /* Avatar.swift */,
 				CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		CEA2BE8B2BFE1EAD0055D20E /* AvatarBuilderModule */ = {
+			isa = PBXGroup;
+			children = (
+				CE9082262BFCE97D006233CA /* Extensions */,
+				CEA2BE882BFE0D740055D20E /* Model */,
+				CEA2BE852BFE069B0055D20E /* MainViewController */,
+				CE9082292BFCF108006233CA /* Presenter.swift */,
+				CE675BDB2BFBCA42003B4410 /* HorizontalCollectionView.swift */,
+			);
+			path = AvatarBuilderModule;
+			sourceTree = "<group>";
+		};
+		CEA2BE912BFE21A30055D20E /* AvatarBuilderWatch Watch App */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BEAA2BFE2CFD0055D20E /* Model */,
+				CEA2BE922BFE21A30055D20E /* AvatarBuilderWatchApp.swift */,
+				CEA2BEA22BFE23270055D20E /* AvatarOverviewView.swift */,
+				CEA2BEAB2BFE38B80055D20E /* EditView.swift */,
+				CEA2BEA62BFE29D90055D20E /* AvatarViewModel.swift */,
+				CEA2BE962BFE21A60055D20E /* Assets.xcassets */,
+				CEA2BE982BFE21A60055D20E /* Preview Content */,
+			);
+			path = "AvatarBuilderWatch Watch App";
+			sourceTree = "<group>";
+		};
+		CEA2BE982BFE21A60055D20E /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BE992BFE21A60055D20E /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		CEA2BEAA2BFE2CFD0055D20E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CEA2BEA82BFE2CEF0055D20E /* Avatar.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -139,14 +226,33 @@
 				CE675BBF2BFBC14A003B4410 /* Sources */,
 				CE675BC02BFBC14A003B4410 /* Frameworks */,
 				CE675BC12BFBC14A003B4410 /* Resources */,
+				CEA2BEA12BFE21A60055D20E /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CEA2BE9C2BFE21A60055D20E /* PBXTargetDependency */,
+			);
+			name = AvatarBuilder;
+			productName = AvatarBuilder;
+			productReference = CE675BC32BFBC14A003B4410 /* AvatarBuilder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CEA2BE8F2BFE21A30055D20E /* AvatarBuilderWatch Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CEA2BE9E2BFE21A60055D20E /* Build configuration list for PBXNativeTarget "AvatarBuilderWatch Watch App" */;
+			buildPhases = (
+				CEA2BE8C2BFE21A30055D20E /* Sources */,
+				CEA2BE8D2BFE21A30055D20E /* Frameworks */,
+				CEA2BE8E2BFE21A30055D20E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = AvatarBuilder;
-			productName = AvatarBuilder;
-			productReference = CE675BC32BFBC14A003B4410 /* AvatarBuilder.app */;
+			name = "AvatarBuilderWatch Watch App";
+			productName = "AvatarBuilderWatch Watch App";
+			productReference = CEA2BE902BFE21A30055D20E /* AvatarBuilderWatch Watch App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -160,6 +266,9 @@
 				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					CE675BC22BFBC14A003B4410 = {
+						CreatedOnToolsVersion = 15.2;
+					};
+					CEA2BE8F2BFE21A30055D20E = {
 						CreatedOnToolsVersion = 15.2;
 					};
 				};
@@ -178,6 +287,7 @@
 			projectRoot = "";
 			targets = (
 				CE675BC22BFBC14A003B4410 /* AvatarBuilder */,
+				CEA2BE8F2BFE21A30055D20E /* AvatarBuilderWatch Watch App */,
 			);
 		};
 /* End PBXProject section */
@@ -189,6 +299,15 @@
 			files = (
 				CE675BD32BFBC14E003B4410 /* LaunchScreen.storyboard in Resources */,
 				CE675BD02BFBC14E003B4410 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEA2BE8E2BFE21A30055D20E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA2BE9A2BFE21A60055D20E /* Preview Assets.xcassets in Resources */,
+				CEA2BE972BFE21A60055D20E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +335,27 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CEA2BE8C2BFE21A30055D20E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CEA2BEA32BFE23280055D20E /* AvatarOverviewView.swift in Sources */,
+				CEA2BEAC2BFE38B80055D20E /* EditView.swift in Sources */,
+				CEA2BE932BFE21A30055D20E /* AvatarBuilderWatchApp.swift in Sources */,
+				CEA2BEA92BFE2CEF0055D20E /* Avatar.swift in Sources */,
+				CEA2BEA72BFE29DA0055D20E /* AvatarViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CEA2BE9C2BFE21A60055D20E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CEA2BE8F2BFE21A30055D20E /* AvatarBuilderWatch Watch App */;
+			targetProxy = CEA2BE9B2BFE21A60055D20E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CE675BD12BFBC14E003B4410 /* LaunchScreen.storyboard */ = {
@@ -352,6 +491,7 @@
 		CE675BD82BFBC14E003B4410 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -362,7 +502,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -384,6 +524,7 @@
 		CE675BD92BFBC14E003B4410 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -394,7 +535,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.entertainment";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -410,6 +551,66 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CEA2BE9F2BFE21A60055D20E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AvatarBuilderWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = TWWBX6RB4S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AvatarBuilderWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.markKovalchuk.AvatarBuilder;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markKovalchuk.AvatarBuilder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
+			};
+			name = Debug;
+		};
+		CEA2BEA02BFE21A60055D20E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"AvatarBuilderWatch Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = TWWBX6RB4S;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = AvatarBuilderWatch;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = com.markKovalchuk.AvatarBuilder;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.markKovalchuk.AvatarBuilder.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 10.2;
 			};
 			name = Release;
 		};
@@ -430,6 +631,15 @@
 			buildConfigurations = (
 				CE675BD82BFBC14E003B4410 /* Debug */,
 				CE675BD92BFBC14E003B4410 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CEA2BE9E2BFE21A60055D20E /* Build configuration list for PBXNativeTarget "AvatarBuilderWatch Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CEA2BE9F2BFE21A60055D20E /* Debug */,
+				CEA2BEA02BFE21A60055D20E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

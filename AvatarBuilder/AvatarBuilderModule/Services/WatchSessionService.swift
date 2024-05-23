@@ -34,7 +34,6 @@ final class WatchSessionService: NSObject, WatchSessionServiceProtocol {
     }
     
     func recieveValue(_ avatar: Avatar) {
-        print("Value recieved: \(avatar.age)")
         avatarValue.value = avatar
     }
     
@@ -46,7 +45,6 @@ final class WatchSessionService: NSObject, WatchSessionServiceProtocol {
             print("Error to update application context")
             return
         }
-        print("Dictionary: \(avatarDictionary["age"])")
         do {
             try WCSession.default.updateApplicationContext([WatchConnectivityConstants.context: avatarDictionary])
         } catch {

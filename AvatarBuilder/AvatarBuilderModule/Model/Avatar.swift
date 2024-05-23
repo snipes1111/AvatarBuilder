@@ -8,10 +8,10 @@
 import Foundation
 
 struct Avatar: Codable {
-    let image: Data
-    let age: String
-    let height: String
-    let weight: String
+    var image: Data
+    var age: String
+    var height: String
+    var weight: String
 }
 
 extension Avatar {

@@ -11,14 +11,11 @@ import SwiftUI
 struct AvatarBuilderWatch_Watch_AppApp: App {
     
     @StateObject private var viewModel = AvatarViewModel()
-    @StateObject private var phoneSessionService = AvatarViewModel()
     
     var body: some Scene {
         WindowGroup {
-            NavigationStack {
-                AvatarOverviewView()
-                    .environmentObject(viewModel)
-            }
+            AvatarOverviewView()
+                .environmentObject(viewModel)
         }
     }
 }

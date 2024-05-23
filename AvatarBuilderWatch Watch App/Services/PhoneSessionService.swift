@@ -17,25 +17,27 @@ protocol PhoneSessionServiceProtocol {
 
 final class PhoneSessionService: NSObject, PhoneSessionServiceProtocol {
     
+    static let shared = PhoneSessionService()
+    
     private var avatarValue = CurrentValueSubject<Avatar, Never>(Avatar.placeholder)
     var avatarPublisher: AnyPublisher<Avatar, Never> { avatarValue.eraseToAnyPublisher() }
     
     private var cancellable: Set<AnyCancellable> = []
     
-    override init() {
+    private override init() {
         super.init()
-        activateSession()
     }
     
     func activateSession() {
         guard WCSession.isSupported() else { return }
         WCSession.default.delegate = self
         WCSession.default.activate()
+        print("Activated")
     }
     
     func recieveValue(_ avatar: Avatar) {
-//        print("Value recieved: \(avatar)")
-//        avatarValue.value = avatar
+        print("Valuer recieved: \(avatar.height)")
+        avatarValue.value = avatar
     }
     
     private func updateContextWith(_ avatar: Avatar) {
@@ -74,10 +76,10 @@ extension PhoneSessionService: WCSessionDelegate {
         }
         do {
             let avatar = try JSONDecoder().decode(Avatar.self, from: avatarData)
-            print("Avatar recieved on the watches: \(avatar)")
+            print("Valuer recieved: \(avatar.height)")
+            recieveValue(avatar)
         } catch {
             print("Error to decode data on wathes")
         }
     }
-    
 }

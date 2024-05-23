@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 protocol ViewInputProtocol: AnyObject {
     func showAlert(with title: String, and message: String)
@@ -19,11 +20,18 @@ protocol PresenterOutputProtocol {
 }
 
 class Presenter {
+    struct Dependencies {
+        var watchSessionService: WatchSessionServiceProtocol = WatchSessionService()
+    }
+    
+    private let dependencies: Dependencies
+    
     private var avatarImages: [String] = []
     private weak var view: ViewInputProtocol?
     
     required init(viewController: ViewInputProtocol) {
         self.view = viewController
+        self.dependencies = Dependencies()
         fetchAvatarImages()
     }
     
@@ -52,6 +60,6 @@ extension Presenter: PresenterOutputProtocol {
         let imageName = getImage(for: imageIdx)
         let data = AvatarImageFetcher.getImageData(imageName: imageName)
         let avatar = Avatar(image: data, age: age, height: height, weight: weight)
-        print(avatar)
+        dependencies.watchSessionService.recieveValue(avatar)
     }
 }

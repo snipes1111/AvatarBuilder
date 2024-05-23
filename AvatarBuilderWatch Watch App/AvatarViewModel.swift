@@ -7,7 +7,17 @@
 
 import Combine
 
-class AvatarViewModel: ObservableObject {
+enum AvatarAttribute: String {
+    case age = "Age:", height = "Height:", weight = "Weight:"
+}
+
+final class AvatarViewModel: ObservableObject {
+    
+    struct Dependencies {
+        var phoneSessionService: PhoneSessionServiceProtocol = PhoneSessionService()
+    }
+    
+    private let dependencies: Dependencies
     
     @Published var age: String = "25"
     @Published var height: String = "44"
@@ -15,6 +25,11 @@ class AvatarViewModel: ObservableObject {
     @Published var isEditing: Bool = false
     @Published var editedAttribute: AvatarAttribute = .age
     @Published var editedText: String = ""
+    
+    init() {
+        self.dependencies = Dependencies()
+        dependencies.phoneSessionService.activateSession()
+    }
     
     func getAttributeValue(for attribute: AvatarAttribute) -> String {
         switch attribute {

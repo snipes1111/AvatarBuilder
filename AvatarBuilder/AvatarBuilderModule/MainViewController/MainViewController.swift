@@ -61,6 +61,12 @@ private extension MainViewController {
 }
 
 extension MainViewController: ViewInputProtocol {
+    func updateUIWith(age: String, weight: String, height: String) {
+        ageTF.text = age
+        weightTF.text = weight
+        heightTF.text = height
+    }
+    
     func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

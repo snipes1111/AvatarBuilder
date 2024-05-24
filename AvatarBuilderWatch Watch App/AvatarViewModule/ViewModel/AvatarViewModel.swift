@@ -13,7 +13,7 @@ final class AvatarViewModel: ObservableObject {
         case age, height, weight
     }
     struct Dependencies {
-        var phoneSessionService: PhoneSessionServiceProtocol = PhoneSessionService.shared
+        var phoneSessionService: PhoneSessionServiceProtocol = PhoneSessionService()
     }
     private let dependencies: Dependencies
     
@@ -24,9 +24,13 @@ final class AvatarViewModel: ObservableObject {
     
     private var cancellable: Set<AnyCancellable> = []
     
-    init(dependencies: Dependencies = Dependencies()) {
+    init(dependencies: Dependencies = .init()) {
         self.dependencies = dependencies
         activatePhoneSession()
+    }
+    
+    deinit {
+        cancellable.removeAll()
     }
     
     func editAttribute(_ value: String, _ attribute: AvatarAttribute) {
@@ -44,6 +48,7 @@ final class AvatarViewModel: ObservableObject {
         }
         self.avatar = avatar
         isEditing.toggle()
+        dependencies.phoneSessionService.updateContextWith(avatar)
     }
 }
 

@@ -36,6 +36,8 @@
 		CEA2BEB72BFE5EDF0055D20E /* PhoneSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEB62BFE5EDF0055D20E /* PhoneSessionService.swift */; };
 		CEA2BEB82BFE5F2F0055D20E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BE862BFE0D640055D20E /* Avatar.swift */; };
 		CEB1CA802BFF88EE0038C2A7 /* ImageDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */; };
+		CEEC1DE52C00F5720046551C /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */; };
+		CEEC1DE62C00F5720046551C /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,7 @@
 		CEA2BEB32BFE4A720055D20E /* WatchSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionService.swift; sourceTree = "<group>"; };
 		CEA2BEB62BFE5EDF0055D20E /* PhoneSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSessionService.swift; sourceTree = "<group>"; };
 		CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataView.swift; sourceTree = "<group>"; };
+		CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,7 +182,6 @@
 			isa = PBXGroup;
 			children = (
 				CEA2BE862BFE0D640055D20E /* Avatar.swift */,
-				CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -190,7 +192,6 @@
 				CEA2BEB22BFE4A520055D20E /* Services */,
 				CEA2BEB12BFE4A3C0055D20E /* CustomViews */,
 				CE9082262BFCE97D006233CA /* Extensions */,
-				CEA2BE882BFE0D740055D20E /* Model */,
 				CEA2BE852BFE069B0055D20E /* MainViewController */,
 			);
 			path = AvatarBuilderModule;
@@ -219,6 +220,8 @@
 			isa = PBXGroup;
 			children = (
 				CEA2BEAE2BFE49B70055D20E /* WatchConnectivityConstants.swift */,
+				CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */,
+				CEA2BE882BFE0D740055D20E /* Model */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				CEA2BEB32BFE4A720055D20E /* WatchSessionService.swift */,
+				CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -382,6 +386,7 @@
 				CE675BDE2BFCCBD2003B4410 /* AvatarImageFetcher.swift in Sources */,
 				CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */,
 				CE9082302BFCFBBD006233CA /* UILabel+Extensions.swift in Sources */,
+				CEEC1DE52C00F5720046551C /* ConnectivityProvider.swift in Sources */,
 				CE675BCB2BFBC14A003B4410 /* MainViewController.swift in Sources */,
 				CE90822C2BFCF45B006233CA /* MainViewController+CollectionView.swift in Sources */,
 				CE675BC72BFBC14A003B4410 /* AppDelegate.swift in Sources */,
@@ -402,6 +407,7 @@
 			files = (
 				CEA2BEB02BFE49B70055D20E /* WatchConnectivityConstants.swift in Sources */,
 				CEA2BEA32BFE23280055D20E /* AvatarOverviewView.swift in Sources */,
+				CEEC1DE62C00F5720046551C /* ConnectivityProvider.swift in Sources */,
 				CEA2BEAC2BFE38B80055D20E /* EditView.swift in Sources */,
 				CEA2BE932BFE21A30055D20E /* AvatarBuilderWatchApp.swift in Sources */,
 				CEA2BEB72BFE5EDF0055D20E /* PhoneSessionService.swift in Sources */,

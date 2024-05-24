@@ -24,7 +24,6 @@ extension UILabel {
         label.font = .systemFont(ofSize: 22)
         label.adjustsFontSizeToFitWidth = true
         label.translatesAutoresizingMaskIntoConstraints = false
-        //label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return label
     }
 }

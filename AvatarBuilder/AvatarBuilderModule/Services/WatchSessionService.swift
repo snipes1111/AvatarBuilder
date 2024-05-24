@@ -11,21 +11,19 @@ import Combine
 
 protocol WatchSessionServiceProtocol {
     var avatarPublisher: AnyPublisher<Avatar, Never> { get }
+    var isSessionReachable: AnyPublisher<Bool, Never> { get }
     func activateSession()
     func recieveValue(_ avatar: Avatar)
 }
 
 final class WatchSessionService: NSObject, WatchSessionServiceProtocol {
-    
     private var avatarValue = CurrentValueSubject<Avatar, Never>(Avatar.placeholder)
     var avatarPublisher: AnyPublisher<Avatar, Never> { avatarValue.eraseToAnyPublisher() }
     
-    private var cancellable: Set<AnyCancellable> = []
+    private var isSessionReachableValue = CurrentValueSubject<Bool, Never>(false)
+    var isSessionReachable: AnyPublisher<Bool, Never> { isSessionReachableValue.eraseToAnyPublisher() }
     
-    override init() {
-        super.init()
-        activateSession()
-    }
+    private var cancellable: Set<AnyCancellable> = []
     
     func activateSession() {
         guard WCSession.isSupported() else { return }
@@ -34,13 +32,12 @@ final class WatchSessionService: NSObject, WatchSessionServiceProtocol {
     }
     
     func recieveValue(_ avatar: Avatar) {
+        print("Value recieved on the phone")
         avatarValue.value = avatar
     }
     
     private func updateContextWith(_ avatar: Avatar) {
-        guard
-            let avatarData = try? JSONEncoder().encode(avatar),
-            let avatarDictionary = try? JSONSerialization.jsonObject(with: avatarData, options: .allowFragments) as? [String: Any]
+        guard let avatarDictionary = Avatar.encode(avatar)
         else {
             print("Error to update application context")
             return
@@ -55,14 +52,18 @@ final class WatchSessionService: NSObject, WatchSessionServiceProtocol {
 
 extension WatchSessionService: WCSessionDelegate {
     func sessionDidBecomeInactive(_ session: WCSession) {
-        
+        cancellable.removeAll()
     }
     
     func sessionDidDeactivate(_ session: WCSession) {
-        
+        cancellable.removeAll()
     }
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+        if session.isReachable { isSessionReachableValue.value = true }
+        else { isSessionReachableValue.value = false }
+        
         avatarPublisher
             .dropFirst()
             .sink { [weak self] avatar in
@@ -71,13 +72,13 @@ extension WatchSessionService: WCSessionDelegate {
         .store(in: &cancellable)
     }
     
-    func sessionReachabilityDidChange(_ session: WCSession) {
-        
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        guard let avatarDictionary = applicationContext[WatchConnectivityConstants.context] as? [String: Any],
+              let avatar = Avatar.decode(avatarDictionary)
+        else {
+            print("Error to recieve context")
+            return
+        }
+        recieveValue(avatar)
     }
-    
-    func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
-        guard let attributes = message[WatchConnectivityConstants.attributes] as? [String: String] else { return }
-        print(attributes)
-    }
-    
 }

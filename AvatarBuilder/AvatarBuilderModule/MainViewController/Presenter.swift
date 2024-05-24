@@ -22,7 +22,7 @@ protocol PresenterOutputProtocol {
 
 class Presenter {
     struct Dependencies {
-        var watchSessionService: WatchSessionServiceProtocol = WatchSessionService()
+        var watchSessionService: ConnectivityProviderProtocol = ConnectivityProvider()
     }
     
     private let dependencies: Dependencies

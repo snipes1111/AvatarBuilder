@@ -7,13 +7,14 @@
 
 import Foundation
 import Combine
+import SwiftUI
 
 final class AvatarViewModel: ObservableObject {
     enum AvatarAttribute: String {
         case age, height, weight
     }
     struct Dependencies {
-        var phoneSessionService: PhoneSessionServiceProtocol = PhoneSessionService()
+        var phoneSessionService: ConnectivityProviderProtocol = ConnectivityProvider()
     }
     private let dependencies: Dependencies
     
@@ -48,7 +49,7 @@ final class AvatarViewModel: ObservableObject {
         }
         self.avatar = avatar
         isEditing.toggle()
-        dependencies.phoneSessionService.updateContextWith(avatar)
+        dependencies.phoneSessionService.recieveValue(avatar)
     }
 }
 
@@ -59,7 +60,9 @@ private extension AvatarViewModel {
             .dropFirst()
             .receive(on: RunLoop.main)
             .sink { [weak self] avatar in
-                self?.avatar = avatar
+                withAnimation(.easeInOut) {
+                    self?.avatar = avatar
+                }
             }
             .store(in: &cancellable)
     }

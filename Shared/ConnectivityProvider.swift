@@ -16,15 +16,7 @@ protocol ConnectivityProviderProtocol {
     func recieveValue(_ avatar: Avatar)
 }
 
-extension ConnectivityProviderProtocol where Self: WCSessionDelegate {
-    func activateSession() {
-        guard WCSession.isSupported() else { return }
-        WCSession.default.delegate = self
-        WCSession.default.activate()
-    }
-}
-
-final class ConnectivityProvider: NSObject {
+final class ConnectivityProvider: NSObject, ConnectivityProviderProtocol {
     private var avatarValue = CurrentValueSubject<Avatar, Never>(Avatar.placeholder)
     var avatarPublisher: AnyPublisher<Avatar, Never> { avatarValue.eraseToAnyPublisher() }
     
@@ -33,8 +25,13 @@ final class ConnectivityProvider: NSObject {
     
     private var cancellable: Set<AnyCancellable> = []
     
+    func activateSession() {
+        guard WCSession.isSupported() else { return }
+        WCSession.default.delegate = self
+        WCSession.default.activate()
+    }
+    
     func recieveValue(_ avatar: Avatar) {
-        print("Value recieved on the phone")
         avatarValue.value = avatar
     }
     
@@ -49,5 +46,41 @@ final class ConnectivityProvider: NSObject {
         } catch {
             print("Error sending application context")
         }
+    }
+}
+
+extension ConnectivityProvider: WCSessionDelegate {
+    
+    #if os(iOS)
+    func sessionDidBecomeInactive(_ session: WCSession) {
+        cancellable.removeAll()
+    }
+    
+    func sessionDidDeactivate(_ session: WCSession) {
+        cancellable.removeAll()
+    }
+    #endif
+    
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+        
+        if session.isReachable { isSessionReachableValue.value = true }
+        else { isSessionReachableValue.value = false }
+        
+        avatarPublisher
+            .dropFirst()
+            .sink { [weak self] avatar in
+            self?.updateContextWith(avatar)
+        }
+        .store(in: &cancellable)
+    }
+    
+    func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
+        guard let avatarDictionary = applicationContext[WatchConnectivityConstants.context] as? [String: Any],
+              let avatar = Avatar.decode(avatarDictionary)
+        else {
+            print("Error to recieve context")
+            return
+        }
+        recieveValue(avatar)
     }
 }

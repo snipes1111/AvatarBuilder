@@ -32,8 +32,6 @@
 		CEA2BEAC2BFE38B80055D20E /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEAB2BFE38B80055D20E /* EditView.swift */; };
 		CEA2BEAF2BFE49B70055D20E /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEAE2BFE49B70055D20E /* WatchConnectivityConstants.swift */; };
 		CEA2BEB02BFE49B70055D20E /* WatchConnectivityConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEAE2BFE49B70055D20E /* WatchConnectivityConstants.swift */; };
-		CEA2BEB42BFE4A720055D20E /* WatchSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEB32BFE4A720055D20E /* WatchSessionService.swift */; };
-		CEA2BEB72BFE5EDF0055D20E /* PhoneSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BEB62BFE5EDF0055D20E /* PhoneSessionService.swift */; };
 		CEA2BEB82BFE5F2F0055D20E /* Avatar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEA2BE862BFE0D640055D20E /* Avatar.swift */; };
 		CEB1CA802BFF88EE0038C2A7 /* ImageDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */; };
 		CEEC1DE52C00F5720046551C /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */; };
@@ -91,8 +89,6 @@
 		CEA2BEA62BFE29D90055D20E /* AvatarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarViewModel.swift; sourceTree = "<group>"; };
 		CEA2BEAB2BFE38B80055D20E /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		CEA2BEAE2BFE49B70055D20E /* WatchConnectivityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityConstants.swift; sourceTree = "<group>"; };
-		CEA2BEB32BFE4A720055D20E /* WatchSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionService.swift; sourceTree = "<group>"; };
-		CEA2BEB62BFE5EDF0055D20E /* PhoneSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneSessionService.swift; sourceTree = "<group>"; };
 		CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataView.swift; sourceTree = "<group>"; };
 		CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -201,7 +197,6 @@
 			isa = PBXGroup;
 			children = (
 				CEB1CA822BFFA88D0038C2A7 /* AvatarViewModule */,
-				CEB1CA812BFFA8670038C2A7 /* Services */,
 				CEA2BE962BFE21A60055D20E /* Assets.xcassets */,
 				CEA2BE982BFE21A60055D20E /* Preview Content */,
 			);
@@ -237,16 +232,7 @@
 		CEA2BEB22BFE4A520055D20E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				CEA2BEB32BFE4A720055D20E /* WatchSessionService.swift */,
 				CE675BDD2BFCCBD2003B4410 /* AvatarImageFetcher.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		CEB1CA812BFFA8670038C2A7 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				CEA2BEB62BFE5EDF0055D20E /* PhoneSessionService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -381,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEA2BEB42BFE4A720055D20E /* WatchSessionService.swift in Sources */,
 				CE9082282BFCE99C006233CA /* UIView+Extensions.swift in Sources */,
 				CE675BDE2BFCCBD2003B4410 /* AvatarImageFetcher.swift in Sources */,
 				CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */,
@@ -410,7 +395,6 @@
 				CEEC1DE62C00F5720046551C /* ConnectivityProvider.swift in Sources */,
 				CEA2BEAC2BFE38B80055D20E /* EditView.swift in Sources */,
 				CEA2BE932BFE21A30055D20E /* AvatarBuilderWatchApp.swift in Sources */,
-				CEA2BEB72BFE5EDF0055D20E /* PhoneSessionService.swift in Sources */,
 				CEA2BEB82BFE5F2F0055D20E /* Avatar.swift in Sources */,
 				CEB1CA802BFF88EE0038C2A7 /* ImageDataView.swift in Sources */,
 				CEA2BEA72BFE29DA0055D20E /* AvatarViewModel.swift in Sources */,

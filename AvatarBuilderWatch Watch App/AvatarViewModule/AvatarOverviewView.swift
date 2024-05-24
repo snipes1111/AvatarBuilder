@@ -10,30 +10,35 @@ import SwiftUI
 struct AvatarOverviewView: View {
     
     @EnvironmentObject var viewModel: AvatarViewModel
-    @State private var isShowingSheet: Bool = false
-    
     typealias Attribute = AvatarViewModel.AvatarAttribute
     
     var body: some View {
         if let avatar = viewModel.avatar {
-            GeometryReader { geometry in
-                let size = geometry.size.width * 0.5
-                List {
-                    Section(header: ImageDataView(imageData: avatar.image,
-                                                  width: size, height: size)) {
-                        attributeRow("Age:", avatar.age, .age)
-                        attributeRow("Height:", avatar.height, .height)
-                        attributeRow("Weight:", avatar.weight, .weight)
-                    }
-                }
+            avatarView(avatar)
                 .sheet(isPresented: $viewModel.isEditing) {
                     EditView()
                 }
-            }
         } else {
             Text("Oops...\nNo avatar was found")
                 .multilineTextAlignment(.center)
                 .font(.title2)
+        }
+    }
+}
+
+extension AvatarOverviewView {
+    @ViewBuilder
+    func avatarView(_ avatar: Avatar)  -> some View {
+        GeometryReader { geometry in
+            let size = geometry.size.width * 0.5
+            List {
+                Section(header: ImageDataView(imageData: avatar.image,
+                                              width: size, height: size)) {
+                    attributeRow("Age:", avatar.age, .age)
+                    attributeRow("Height:", avatar.height, .height)
+                    attributeRow("Weight:", avatar.weight, .weight)
+                }
+            }
         }
     }
     

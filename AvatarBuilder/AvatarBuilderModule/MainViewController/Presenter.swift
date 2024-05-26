@@ -9,14 +9,19 @@ import Foundation
 import Combine
 
 protocol ViewInputProtocol: AnyObject {
+    /// Show alert for user depending on the case
     func showAlert(with title: String, and message: String)
+    /// Update attributes for the user's avatar
     func updateUIWith(age: String, weight: String, height: String)
 }
 
 protocol PresenterOutputProtocol {
+    /// Sets the number of images available inside Assets catalague
     var numberOfImages: Int { get }
     init(viewController: ViewInputProtocol, dependencies: Presenter.Dependencies)
+    /// Return the name for image depending on the item index
     func getImage(for item: Int) -> String
+    /// If the field aren't empty, create an avatar instance and update avatar publisher
     func createAvatar(imageIdx: Int?, age: String?, height: String?, weight: String?)
 }
 
@@ -31,7 +36,7 @@ class Presenter {
     private weak var view: ViewInputProtocol?
     
     @Published var avatar: Avatar = Avatar.placeholder
-    
+    // Check for wath availability and active connection status
     private var isConnected: Bool = false
     
     private var cancellable: Set<AnyCancellable> = []
@@ -57,7 +62,7 @@ class Presenter {
     private func fetchAvatarImages() {
         avatarImages = AvatarImageFetcher.getAvatarImages(numbersOfImages: 6)
     }
-    
+//MARK: - Subscriptions
     private func subscribeToAvatarChanges() {
         dependencies.watchSessionService.avatarPublisher
             .dropFirst()

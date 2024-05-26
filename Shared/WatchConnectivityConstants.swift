@@ -9,5 +9,4 @@ import Foundation
 
 struct WatchConnectivityConstants {
     static let context = "com.markKovalchuk.AvatarBuilder.watchContext"
-    static let attributes = "com.markKovalchuk.AvatarBuilder.avatar"
 }

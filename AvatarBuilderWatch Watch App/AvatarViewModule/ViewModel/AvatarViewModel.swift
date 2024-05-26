@@ -19,8 +19,11 @@ final class AvatarViewModel: ObservableObject {
     private let dependencies: Dependencies
     
     @Published private(set) var avatar: Avatar?
+    /// Track the status of editing attribute
     @Published var isEditing: Bool = false
+    /// Track the current attribute that is being edited right now
     @Published var editedAttribute: AvatarAttribute = .age
+    /// Sets the text from textfield for editing attribute
     @Published var editedText: String = ""
     
     private var cancellable: Set<AnyCancellable> = []
@@ -54,6 +57,7 @@ final class AvatarViewModel: ObservableObject {
 }
 
 private extension AvatarViewModel {
+    /// Starts current phone session and track model changes and perform animation if avatar is passed to the viewModel 
     func activatePhoneSession() {
         dependencies.phoneSessionService.activateSession()
         dependencies.phoneSessionService.avatarPublisher

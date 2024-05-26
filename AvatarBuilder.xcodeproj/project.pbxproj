@@ -36,6 +36,7 @@
 		CEB1CA802BFF88EE0038C2A7 /* ImageDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */; };
 		CEEC1DE52C00F5720046551C /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */; };
 		CEEC1DE62C00F5720046551C /* ConnectivityProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */; };
+		CEEC1DE82C0355B50046551C /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEEC1DE72C0355B50046551C /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +92,7 @@
 		CEA2BEAE2BFE49B70055D20E /* WatchConnectivityConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchConnectivityConstants.swift; sourceTree = "<group>"; };
 		CEB1CA7F2BFF88EE0038C2A7 /* ImageDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDataView.swift; sourceTree = "<group>"; };
 		CEEC1DE42C00F5720046551C /* ConnectivityProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectivityProvider.swift; sourceTree = "<group>"; };
+		CEEC1DE72C0355B50046551C /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +187,7 @@
 		CEA2BE8B2BFE1EAD0055D20E /* AvatarBuilderModule */ = {
 			isa = PBXGroup;
 			children = (
+				CEEC1DE72C0355B50046551C /* Constants.swift */,
 				CEA2BEB22BFE4A520055D20E /* Services */,
 				CEA2BEB12BFE4A3C0055D20E /* CustomViews */,
 				CE9082262BFCE97D006233CA /* Extensions */,
@@ -368,6 +371,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE9082282BFCE99C006233CA /* UIView+Extensions.swift in Sources */,
+				CEEC1DE82C0355B50046551C /* Constants.swift in Sources */,
 				CE675BDE2BFCCBD2003B4410 /* AvatarImageFetcher.swift in Sources */,
 				CE9082362BFD1E53006233CA /* UIButton+Extension.swift in Sources */,
 				CE9082302BFCFBBD006233CA /* UILabel+Extensions.swift in Sources */,

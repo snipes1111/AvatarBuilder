@@ -11,21 +11,21 @@ final class MainViewController: UIViewController {
     
     lazy var mainView: UIView = UIView(frame: view.frame)
     
-    lazy var chooseAvatarLabel: UILabel = UILabel.createSectionLabel(with: "Step 1: Choose your avatar")
-    lazy var setAttributesLabel: UILabel = UILabel.createSectionLabel(with: "Step 2: Set attributes")
-    lazy var ageLabel: UILabel = UILabel.createAttributeLabel(with: "Age:")
-    lazy var heightLabel: UILabel = UILabel.createAttributeLabel(with: "Height:")
-    lazy var weightLabel: UILabel = UILabel.createAttributeLabel(with: "Weight:")
-    lazy var ageTF: UITextField = UITextField.borderedTextField(with: "Desired age")
-    lazy var heightTF: UITextField = UITextField.borderedTextField(with: "Desired height")
-    lazy var weightTF: UITextField = UITextField.borderedTextField(with: "Desired weight")
+    lazy var chooseAvatarLabel: UILabel = UILabel.createSectionLabel(with: Constants.stepOne)
+    lazy var setAttributesLabel: UILabel = UILabel.createSectionLabel(with: Constants.stepTwo)
+    lazy var ageLabel: UILabel = UILabel.createAttributeLabel(with: Constants.age)
+    lazy var heightLabel: UILabel = UILabel.createAttributeLabel(with: Constants.height)
+    lazy var weightLabel: UILabel = UILabel.createAttributeLabel(with: Constants.weight)
+    lazy var ageTF: UITextField = UITextField.borderedTextField(with: Constants.desiredAge)
+    lazy var heightTF: UITextField = UITextField.borderedTextField(with: Constants.desiredHeight)
+    lazy var weightTF: UITextField = UITextField.borderedTextField(with: Constants.desiredWeight)
     
-    lazy var avatarButton: UIButton = UIButton.createButton(with: "Create my Avatar!")
+    lazy var avatarButton: UIButton = UIButton.createButton(with: Constants.createAvatar)
     
     lazy var imageCollectionView: HorizontalCollectionView = {
         HorizontalCollectionView(view: mainView, numberOfItems: 2)
     }()
-    
+    // Presenter is assigned inside commonInit(), it's safe to make it implicitly unwrapped optional.
     var presenter: PresenterOutputProtocol!
     
     override func viewDidLoad() {
@@ -34,6 +34,7 @@ final class MainViewController: UIViewController {
     }
     
     private func commonInit() {
+        // Dependecy injection
         presenter = Presenter(viewController: self)
         setupCollectionView()
         setupSubviews()
@@ -43,6 +44,7 @@ final class MainViewController: UIViewController {
 }
 
 private extension MainViewController {
+    /// Hide the keyboard after the user tap on the screen
     func createTapGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         mainView.addGestureRecognizer(tapGesture)
@@ -60,6 +62,7 @@ private extension MainViewController {
     }
 }
 
+//MARK: - ViewInputProtocol Extension
 extension MainViewController: ViewInputProtocol {
     func updateUIWith(age: String, weight: String, height: String) {
         ageTF.text = age

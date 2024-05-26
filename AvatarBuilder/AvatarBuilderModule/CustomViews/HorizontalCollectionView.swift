@@ -6,9 +6,9 @@
 //
 
 import UIKit
-
+//MARK: - Collection View
 final class HorizontalCollectionView: UICollectionView {
-    
+
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
     }
@@ -32,6 +32,7 @@ extension HorizontalCollectionView {
     }
 }
 
+//MARK: - Compositional Layout
 final class CompositionalLayoutBuilder {
     
     private let view: UIView
@@ -77,6 +78,7 @@ final class CompositionalLayoutBuilder {
 }
 
 extension NSCollectionLayoutSection {
+    /// Add scaling animation for scrolling of the collection view
     func addScaleAnimation(minScale: CGFloat = 0.7, maxScale: CGFloat = 1.1) {
         visibleItemsInvalidationHandler = { (items, offset, environment) in
             items.forEach { item in

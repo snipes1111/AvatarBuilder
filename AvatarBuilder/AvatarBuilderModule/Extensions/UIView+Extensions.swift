@@ -8,6 +8,7 @@
 import UIKit
 
 extension UIView {
+    /// Places the view inside superview and anchor its constraints depending on the keyboard appearance possibility
     func fillSuperView(_ superView: UIView, isKeyboardSensetive: Bool = false) {
         translatesAutoresizingMaskIntoConstraints = false
         leadingAnchor.constraint(equalTo: superView.leadingAnchor).isActive = true

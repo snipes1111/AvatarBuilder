@@ -10,9 +10,13 @@ import WatchConnectivity
 import Combine
 
 protocol ConnectivityProviderProtocol {
+    /// Publisher for the user created avatar
     var avatarPublisher: AnyPublisher<Avatar, Never> { get }
+    /// Allows to track connectionn between phone and watch
     var isSessionReachable: AnyPublisher<Bool, Never> { get }
+    /// Starts session between phone and watch and sets delegate for WatchConnectivity
     func activateSession()
+    /// Update the avatar publisher
     func recieveValue(_ avatar: Avatar)
 }
 
@@ -33,6 +37,10 @@ final class ConnectivityProvider: NSObject, ConnectivityProviderProtocol {
     
     func recieveValue(_ avatar: Avatar) {
         avatarValue.value = avatar
+    }
+    
+    deinit {
+        cancellable.removeAll()
     }
     
     private func updateContextWith(_ avatar: Avatar) {
@@ -62,16 +70,8 @@ extension ConnectivityProvider: WCSessionDelegate {
     #endif
     
     func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        
-        if session.isReachable { isSessionReachableValue.value = true }
-        else { isSessionReachableValue.value = false }
-        
-        avatarPublisher
-            .dropFirst()
-            .sink { [weak self] avatar in
-            self?.updateContextWith(avatar)
-        }
-        .store(in: &cancellable)
+        checkConnection(for: session)
+        subscribeToAvatarPublisher()
     }
     
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
@@ -82,5 +82,21 @@ extension ConnectivityProvider: WCSessionDelegate {
             return
         }
         recieveValue(avatar)
+    }
+}
+
+private extension ConnectivityProvider {
+    func subscribeToAvatarPublisher() {
+        avatarPublisher
+            .dropFirst()
+            .sink { [weak self] avatar in
+            self?.updateContextWith(avatar)
+        }
+        .store(in: &cancellable)
+    }
+    
+    func checkConnection(for session: WCSession) {
+        if session.isReachable { isSessionReachableValue.value = true }
+        else { isSessionReachableValue.value = false }
     }
 }
